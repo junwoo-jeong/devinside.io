@@ -23,7 +23,13 @@
             <a class="user-menu-item" href="/#">임시 글</a>
             <div class="separator"></div>
             <a class="user-menu-item" href="/settings">설정</a>
-            <a class="user-menu-item" href="{{ route('logout') }}">로그아웃</a>
+            <a class="user-menu-item" 
+              href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">로그아웃</a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+            </form>
           </div>
         </div>
       </div>

@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    
     <link rel="stylesheet" href="{{ asset('css/signin.css') }}">
     <link rel="stylesheet" href="{{ asset('css/tools/button.css') }}">
     <link rel="stylesheet" href="{{ asset('css/layouts/layout.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>{{ config('app.name', 'Laravel') }}</title>
+
   </head>
   <body class="text-center">
     <form class="form-signin" action="{{ route('login') }}" method="POST">
@@ -23,7 +28,7 @@
       <button class="btn btn-lg btn-primary btn-block" type="submit">로그인</button>
       <hr />
       <h1 class="h4 mb-3 font-weight-normal">아직 회원이 아니신가요?</h1>
-      <a class="btn btn-link btn-block" href="/signuppage.php">회원가입 페이지로</a>
+      <a class="btn btn-link btn-block" href="{{ route('register') }}">회원가입 페이지로</a>
       <p class="mt-5 mb-3 text-muted">JEONG Copyright© 2018.09.28 ~ </p>
     </form>
   </body>
