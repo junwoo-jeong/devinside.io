@@ -4,7 +4,7 @@
     <div class="badge">blog</div>
   </a>
   <ul class="menu">
-    <li class="menuItem active" onclick="">
+    <li class="menuItem {{ $sorting=='tranding' ? 'active' : '' }}">
       <a href="?sorting=tranding">
         <i class="material-icons">
           trending_up
@@ -14,7 +14,7 @@
         </div>
       </a>
     </li>
-    <li class="menuItem" onclick="">
+    <li class="menuItem {{$sorting=='recent' ? 'active' : ''}}">
       <a href="?sorting=recent">
         <i class="material-icons">
           update
@@ -24,7 +24,7 @@
         </div>
       </a>
     </li>
-    <li class="menuItem" onclick="">
+    <li class="menuItem {{$sorting=='tag' ? 'active' : ''}}">
       <a href="?sorting=tag">
         <i class="material-icons">
           label

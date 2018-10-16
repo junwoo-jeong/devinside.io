@@ -21,8 +21,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('home');
+      $sorting = $request->input('sorting') ?? 'tranding';
+
+      return view('home', [
+        'sorting'=>$sorting
+      ]);
     }
 }

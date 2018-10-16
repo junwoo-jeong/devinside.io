@@ -7,12 +7,12 @@
     @guest
     <a href="{{ route('login') }}" class="button outline">로그인</a>
     @else
-    <div class="userButton" onclick="">
+    <div class="userButton" onclick="userButton()">
       <div class="thumbnail">
         <img src="{{ Auth::user()->thumbnail }}" alt="thumbnail" />
       </div>
     </div>
-    <div class="user-menu-wrapper" style="">
+    <div class="user-menu-wrapper" style="display: none;">
       <div class="user-menu-positioner">
         <div class="rotated-square"></div>
         <div class="user-menu">

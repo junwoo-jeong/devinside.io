@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('mainSidebar')
-  @component('components.mainSidebar')
+  @component('components.mainSidebar', ['sorting'=>$sorting])
 
   @endcomponent
 @endsection
