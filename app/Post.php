@@ -9,4 +9,12 @@ class Post extends Model
   protected $fillable = [
     'title', 'user_id', 'content','thumbnail'
   ];
+
+  public function post_imgs() {
+    return $this->hasMany('App\Post_img');
+  }
+  
+  public function user() {
+    return $this->belongsTo('App\User');
+  }
 }

@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="{{ asset('css/layouts/layout.css') }}">
   <link rel="stylesheet" href="{{ asset('css/layouts/main.css') }}">
   <link rel="stylesheet" href="{{ asset('css/tools/button.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/components/postCard.css') }}">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>

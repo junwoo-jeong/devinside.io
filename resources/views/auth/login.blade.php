@@ -25,6 +25,14 @@
       <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required="" autofocus="">
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="">
+      <div class="errors">
+        @if ($errors->has('email'))
+          <p>{{$errors->first('email')}}</p>
+        @endif
+        @if ($errors->has('password'))
+          <p>{{$errors->first('password')}}</p>
+        @endif
+      </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">로그인</button>
       <hr />
       <h1 class="h4 mb-3 font-weight-normal">아직 회원이 아니신가요?</h1>
