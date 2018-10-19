@@ -1,0 +1,93 @@
+.WriteConfigureThumbnail {
+    position: relative;
+}
+
+.WriteConfigureThumbnail .remove-wrapper {
+    margin-top: -0.75rem;
+    text-align: right;
+    padding-right: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.WriteConfigureThumbnail .remove-wrapper .remove {
+    font-size: 0.875rem;
+    font-weight: 800;
+    color: #ff6b6b;
+    cursor: pointer;
+}
+
+.WriteConfigureThumbnail .remove-wrapper .remove:hover {
+    color: #ff8787;
+}
+
+.WriteConfigureThumbnail .white-button {
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    background: white;
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.1725);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.1725);
+    color: #343a40;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.WriteConfigureThumbnail .white-button.fullwidth {
+    width: 100%;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.WriteConfigureThumbnail .white-button:hover {
+    background: #f1f3f5;
+}
+
+.WriteConfigureThumbnail .white-button svg {
+    font-size: 1.25rem;
+}
+
+.WriteConfigureThumbnail .white-button .text {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.WriteConfigureThumbnail .thumbnail-area {
+    width: 100%;
+    padding-top: 52.63%;
+    position: relative;
+}
+
+.WriteConfigureThumbnail .thumbnail-area .full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.WriteConfigureThumbnail .thumbnail-area img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    display: block;
+}
+
+.WriteConfigureThumbnail .thumbnail-area .overlay {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-right: 0.875rem;
+    padding-bottom: 0.875rem;
+}
+
+
+
+// WEBPACK FOOTER //
+// ./src/components/write/WriteConfigureThumbnail/WriteConfigureThumbnail.scss

@@ -1,5 +1,5 @@
 <aside class="mainSidebar">
-  <a class="logo" href="?sorting=tranding">
+  <a class="logo" href="{{ route('home') }}">
     junwoo
     <div class="badge">blog</div>
   </a>

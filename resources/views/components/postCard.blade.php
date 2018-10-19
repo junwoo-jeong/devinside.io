@@ -1,18 +1,18 @@
 <div class="PostCard">
-    <a class="thumbnail-wrapper" href="{{ route('/post') }}">
+    <a class="thumbnail-wrapper" href="posts/{{ $post['id'] }}">
       <img src="{{ $post['thumbnail'] }}"
         alt="{{ $post['title'] }}">
       <div class="white-mask"></div>
     </a>
     <div class="card-content">
-      <a class="user-thumbnail-wrapper" href="/@{{ $post['user']['name'] }}">
+      <a class="user-thumbnail-wrapper" href="/{{ '@'.$post['user']['name'] }}">
         <img src="{{ $post['user']['thumbnail'] }}"
           alt="{{ $post['user']['name'] }}">
       </a>
       <div class="content-head">
-        <a class="username" href="/@{{ $post['user']['name'] }}">{{ $post['user']['name'] }}</a>
+        <a class="username" href="/{{ '@'.$post['user']['name'] }}"> {{ $post['user']['name'] }} </a>
         <h3>
-          <a href="/post.php?num={{ $post['id'] }}">
+          <a href="posts/{{ $post['id'] }}">
             {{ $post['title'] }}
           </a>
         </h3>

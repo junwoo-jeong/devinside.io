@@ -1,0 +1,242 @@
+.SubmitBox {
+    position: absolute;
+    right: 0.5rem;
+    top: 5rem;
+    background: #495057;
+    width: 20rem;
+    padding: 1.5rem;
+    z-index: 10;
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    color: white;
+}
+
+@-webkit-keyframes submitBoxAppear {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-25%);
+        transform: translateY(-25%);
+    }
+
+    100% {
+        opacity: 1;
+        trasnform: translateY(0px);
+    }
+}
+
+@keyframes submitBoxAppear {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-25%);
+        transform: translateY(-25%);
+    }
+
+    100% {
+        opacity: 1;
+        trasnform: translateY(0px);
+    }
+}
+
+@-webkit-keyframes submitBoxDisappear {
+    0% {
+        opacity: 1;
+        trasnform: translateY(0px);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(-25%);
+        transform: translateY(-25%);
+    }
+}
+
+@keyframes submitBoxDisappear {
+    0% {
+        opacity: 1;
+        trasnform: translateY(0px);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(-25%);
+        transform: translateY(-25%);
+    }
+}
+
+@media (max-width: 375px) {
+    .SubmitBox {
+        width: calc(100vw - 1rem);
+    }
+}
+
+.SubmitBox.appear {
+    -webkit-animation: submitBoxAppear 0.15s ease-in-out;
+    animation: submitBoxAppear 0.15s ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.SubmitBox.disappear {
+    -webkit-animation: submitBoxDisappear 0.15s ease-in-out;
+    animation: submitBoxDisappear 0.15s ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.SubmitBox .title {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.SubmitBox .title .text {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.SubmitBox .title .view {
+    margin-left: auto;
+    font-size: 0.9rem;
+    color: #fd7e14;
+    font-weight: 600;
+}
+
+.SubmitBox .title .view:hover {
+    cursor: pointer;
+    color: #ff922b;
+}
+
+.SubmitBox .sections {
+    margin-top: 0.5rem;
+}
+
+.SubmitBox .sections section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.SubmitBox .sections .section-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #ced4da;
+}
+
+.SubmitBox .sections .section-title.category {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.SubmitBox .sections .section-title.category .edit {
+    line-height: 0.8rem;
+    margin-left: auto;
+    padding: 0.25rem;
+    border: 1px solid #f8f9fa;
+    border-radius: 2px;
+    color: white;
+    cursor: pointer;
+}
+
+.SubmitBox .sections .section-title.category .edit div {
+    margin-top: 0.1rem;
+    margin-left: 0.25rem;
+}
+
+.SubmitBox .sections .section-title.category .edit:hover {
+    background: white;
+    color: #212529;
+}
+
+.SubmitBox .footer {
+    padding-top: 1rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: -1.5rem;
+    padding: 1.5rem;
+    padding-bottom: 1rem;
+    margin-top: 0rem;
+    background: #343a40;
+}
+
+.SubmitBox .footer .buttons {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.SubmitBox .footer .buttons button {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex: 1 1;
+    flex: 1 1;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.1725);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.1725);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.SubmitBox .footer .buttons button.gray {
+    background: #65707b;
+}
+
+.SubmitBox .footer .buttons button.gray:hover {
+    background: #707d89;
+}
+
+.SubmitBox .footer .buttons button.gray:active {
+    background: #5a636d;
+}
+
+.SubmitBox .footer .buttons button.purple {
+    background: #845ef7;
+}
+
+.SubmitBox .footer .buttons button.purple:hover {
+    background: #9776f8;
+}
+
+.SubmitBox .footer .buttons button.purple:active {
+    background: #845ef7;
+}
+
+.SubmitBox .footer .buttons button.blue {
+    background: #339af0;
+}
+
+.SubmitBox .footer .buttons button.blue:hover {
+    background: #4ba6f2;
+}
+
+.SubmitBox .footer .buttons button.blue:active {
+    background: #339af0;
+}
+
+.SubmitBox .footer .buttons button+button {
+    margin-left: 1rem;
+}
+
+.SubmitBox .footer .open-options {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #f76707;
+    display: block;
+    margin-top: 1rem;
+    margin-right: 0.125rem;
+    font-weight: 600;
+}
+
+.SubmitBox .footer .open-options a:hover {
+    cursor: pointer;
+    color: #fd7e14;
+}

@@ -1,7 +1,11 @@
 <div class="mainHead">
   <div class="button-area">
-    <a href="{{ route('write') }}" class="button default">새 포스트 작성</a>
+    @guest
+    @else
+    <a href="{{ route('posts.create') }}" class="button default">새 포스트 작성</a>
+    @endguest
   </div>
+  
   <div class="spacer"></div>
   <div class="rignt-area">
     @guest
@@ -19,7 +23,7 @@
           <div class="menu-items">
             <a class="user-menu-item" href="/#">내 벨로그</a>
             <div class="separator"></div>
-          <a class="user-menu-item" href="{{ route('write') }}">새 글 작성</a>
+          <a class="user-menu-item" href="{{ route('posts.create') }}">새 글 작성</a>
             <a class="user-menu-item" href="/#">임시 글</a>
             <div class="separator"></div>
             <a class="user-menu-item" href="/settings">설정</a>
