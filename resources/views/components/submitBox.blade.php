@@ -1,4 +1,4 @@
-<div class="SubmitBox appear">
+<div class="SubmitBox">
     <div class="title">
         <div class="text">새 글 작성하기</div>
     </div>
@@ -10,21 +10,23 @@
                     <div class="button util flex-center">등록</div>
                 </div>
                 <div id="tags" class="tags ps">
-                    <div class="tag">
-                        <div class="text">adasdas</div>
-                        <div class="remove"><svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="1em"
-                                width="1em" viewBox="0 0 40 40" style="vertical-align: middle;">
-                                <g>
-                                    <path d="m28.4 21.6v-3.2h-16.8v3.2h16.8z m-8.4-18.2c9.2 0 16.6 7.4 16.6 16.6s-7.4 16.6-16.6 16.6-16.6-7.4-16.6-16.6 7.4-16.6 16.6-16.6z"></path>
-                                </g>
-                            </svg></div>
+                  <div class="tag">
+                    <div class="text">adasdas</div>
+                    <div class="remove">
+                      <svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="1em"
+                            width="1em" viewBox="0 0 40 40" style="vertical-align: middle;">
+                        <g>
+                          <path d="m28.4 21.6v-3.2h-16.8v3.2h16.8z m-8.4-18.2c9.2 0 16.6 7.4 16.6 16.6s-7.4 16.6-16.6 16.6-16.6-7.4-16.6-16.6 7.4-16.6 16.6-16.6z"></path>
+                        </g>
+                      </svg>
                     </div>
-                    <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
-                        <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
-                    </div>
-                    <div class="ps__rail-y" style="top: 0px; height: 37px; right: 0px;">
-                        <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
-                    </div>
+                  </div>
+                  <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+                      <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                  </div>
+                  <div class="ps__rail-y" style="top: 0px; height: 37px; right: 0px;">
+                      <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+                  </div>
                 </div>
             </div>
         </section>
@@ -32,8 +34,7 @@
             <div class="section-title">썸네일 지정</div>
             <div class="WriteConfigureThumbnail">
                 <div class="remove-wrapper"><button class="remove">제거</button></div>
-                <div class="thumbnail-area"><img class="full" src=""
-                        alt="post-thumbnail">
+                <div class="thumbnail-area"><img class="full" src="" alt="post-thumbnail">
                     <div class="overlay full"><button class="white-button"><svg fill="currentColor" preserveAspectRatio="xMidYMid meet"
                                 height="1em" width="1em" viewBox="0 0 40 40" style="vertical-align: middle;">
                                 <g>

@@ -21,6 +21,6 @@ Route::post('/posts', 'PostsController@store')->name('posts.store'); // 생성
 Route::post('/posts/{id}', 'PostsController@update')->name('posts.update'); // 글 수정
 Route::delete('/posts/{id}', 'PostsController@destroy')->name('posts.destory'); // 글 삭제
 
-Route::get('/test/{id}', function ($id) {
-  return response()->json($id);
+Route::get('/test', function () {
+  return view('test');
 });

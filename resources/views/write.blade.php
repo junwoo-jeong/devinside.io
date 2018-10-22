@@ -9,10 +9,10 @@
   <link rel="stylesheet" href="{{ asset('css/tools/writeThumbnail.css') }}">
 @endsection
 @section('writeForm')
+  @component('components.submitBox')
+  @endcomponent
   @component('components.writeForm', ['post'=>$post ?? ''])
   @endcomponent  
-  @component('components.submitBox')
-      
-  @endcomponent
+  
 @endsection
 

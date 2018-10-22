@@ -39,3 +39,17 @@ function submit(post_id) {
     })
   }
 }
+var _submitBox = new (function (target){
+  this.title = '';
+  this.content = '';
+  this.tag = {};
+  this.thumbnail  = '';
+  this.appear = false;
+  this.targetBox = target;
+
+  this.showSubmitbox = function () {
+    if(this.appear) {
+      this.target.style['display'] = 'none';
+    }
+  }
+})(document.getElementsByClassName('SubmitBox')[0]);
