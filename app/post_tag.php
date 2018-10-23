@@ -4,8 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class post_tag extends Model
+class Post_tag extends Model
 {
+  public $timestamps = false;
+  protected $fillable = [
+    'post_id',
+    'tag_id'
+  ];
   public function tags() {
     return $this->hasMany('App\tag');
   }

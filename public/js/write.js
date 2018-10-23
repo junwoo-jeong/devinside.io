@@ -26,7 +26,7 @@ function submit(post_id) {
     fetch(url, {
       method: 'POST',
       headers : {
-        "X-CSRF-TOKEN": document.querySelector("meta[property='csrf']").getAttribute("content"),
+        "X-CSRF-TOKEN": "newJEkJEWsK36uFG44ci9PLxFqRSvAs6d6aTCB6N",
       },
       redirect: 'follow',
       body: data,

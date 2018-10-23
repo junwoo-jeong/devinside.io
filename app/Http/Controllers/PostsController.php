@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use App\Post;
+use App\Tag;
+use App\Post_tag;
 
 class PostsController extends Controller
 {
@@ -49,15 +53,39 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
+      $this->validate($request, [
+        'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+      ]);
+
       $title = $request->input('title');
       $content = $request->input('content');
+      $tags = $request->input('tags');
 
-      Post::create([
+      $file = $request->file('thumbnail');
+
+      Storage::disk('s3')->put('', fopen($file, 'r+'), 'public');
+
+      $tags = explode(',', $tags);
+
+      $post = Post::create([
         'title'=>$title,
         'user_id'=>Auth::id(),
         'content'=>$content,
-        'thumbnail'=>''
+        'thumbnail'=>$file->getClientOriginalExtension()
       ]);
+      
+      $tags = array_map(function($tag) {
+        return Tag::firstOrCreate([
+          'name'=>$tag
+        ]);
+      }, $tags);
+
+      foreach ($tags as $tag) {
+        Post_tag::create([
+          'post_id'=>$post->id,
+          'tag_id'=>$tag->id
+        ]);
+      }
 
       return redirect('/');
     }
