@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Session;
+
 use App\Post;
 use App\Tag;
 use App\Post_tag;
@@ -98,6 +100,11 @@ class PostsController extends Controller
      */
     public function show($id)
     {
+      $blogKey = 'blog_' . $id;
+      if (!Session::has($blogKey)) {
+        Post::where('id', $id)->increment('hit');
+        Session::put($blogKey, 1);
+      }
       $post = Post::with('user:id,name,thumbnail')->where(['id'=>$id])->first();
       $post_tags = Post_tag::with('tag:id,name')->where(['post_id'=>$id])->get();
 
