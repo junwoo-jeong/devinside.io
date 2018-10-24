@@ -1,5 +1,5 @@
 <div class="PostCard">
-    <a class="thumbnail-wrapper" href="posts/{{ $post['id'] }}">
+    <a class="thumbnail-wrapper" href="/posts/{{ $post['id'] }}">
       <img src="{{ $post['thumbnail'] }}"
         alt="{{ $post['title'] }}">
       <div class="white-mask"></div>
@@ -12,7 +12,7 @@
       <div class="content-head">
         <a class="username" href="/{{ '@'.$post['user']['name'] }}"> {{ $post['user']['name'] }} </a>
         <h3>
-          <a href="posts/{{ $post['id'] }}">
+          <a href="/posts/{{ $post['id'] }}">
             {{ $post['title'] }}
           </a>
         </h3>
@@ -28,6 +28,6 @@
           </span>
         </div>
       </div>
-      <div class="description" style="-webkit-box-orient: vertical;">{{ $post['content'] }}</div>
+      <div class="description" style="-webkit-box-orient: vertical;">{{ preg_replace('/(<script(\s|\S)*?<\/script>)|(<style(\s|\S)*?<\/style>)|(<!--(\s|\S)*?-->)|(<\/?(\s|\S)*?>)/', "", $post['content']) }}</div>
     </div>
   </div>

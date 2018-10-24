@@ -11,10 +11,10 @@ class Post_tag extends Model
     'post_id',
     'tag_id'
   ];
-  public function tags() {
-    return $this->hasMany('App\tag');
+  public function tag() {
+    return $this->belongsTo('App\tag');
   }
-  public function posts() {
-    return $this->hasMany('App\Post');
+  public function post() {
+    return $this->belongsTo('App\Post');
   }
 }

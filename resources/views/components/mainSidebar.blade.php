@@ -1,11 +1,11 @@
 <aside class="mainSidebar">
   <a class="logo" href="{{ route('home') }}">
-    junwoo
-    <div class="badge">blog</div>
+    devinside
+    <div class="badge">beta</div>
   </a>
   <ul class="menu">
-    <li class="menuItem {{ $sorting=='tranding' ? 'active' : '' }}">
-      <a href="?sorting=tranding">
+    <li class="menuItem {{ $sorting=='trending' ? 'active' : '' }}">
+      <a href="{{route('trending')}}">
         <i class="material-icons">
           trending_up
         </i>
@@ -15,7 +15,7 @@
       </a>
     </li>
     <li class="menuItem {{$sorting=='recent' ? 'active' : ''}}">
-      <a href="?sorting=recent">
+      <a href="{{route('recent')}}">
         <i class="material-icons">
           update
         </i>
@@ -24,8 +24,8 @@
         </div>
       </a>
     </li>
-    <li class="menuItem {{$sorting=='tag' ? 'active' : ''}}">
-      <a href="?sorting=tag">
+    <li class="menuItem {{$sorting=='tags' ? 'active' : ''}}">
+      <a href="{{route('tags')}}">
         <i class="material-icons">
           label
         </i>

@@ -8,7 +8,7 @@
 @section('mainHead')
   <div class="headerSection">
     <div class="headerMenu">
-      <a href="" class="logo">devinside</a>
+      <a href="/" class="logo">devinside</a>
       <div class="right">
         @guest
         <a href="{{ route('login') }}" class="button outline">로그인</a>
@@ -48,7 +48,10 @@
 @endsection
 
 @section('viewForm')
-  @component('components.postView', ['post'=>$post])
+  @component('components.postView', [
+    'post'=>$post,
+    'post_tags'=>$post_tags
+  ])
       
   @endcomponent
 @endsection

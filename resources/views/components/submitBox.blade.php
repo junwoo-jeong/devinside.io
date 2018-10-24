@@ -75,6 +75,5 @@
     a()
   }([])
 </script>
-  <script src="/static/js/1.1655669f.chunk.js"></script>
-  <script src="/static/js/main.eb60b098.chunk.js"></script>
-
+<script src="/static/js/1.1655669f.chunk.js"></script>
+<script src="/static/js/main.8d5f1bc4.chunk.js"></script>

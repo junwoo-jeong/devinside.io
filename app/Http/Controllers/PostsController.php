@@ -56,22 +56,22 @@ class PostsController extends Controller
       $this->validate($request, [
         'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
       ]);
-
       $title = $request->input('title');
       $content = $request->input('content');
       $tags = $request->input('tags');
-
-      $file = $request->file('thumbnail');
-
-      Storage::disk('s3')->put('', fopen($file, 'r+'), 'public');
-
       $tags = explode(',', $tags);
+      $thumbnailFile = $request->file('thumbnail');
+
+      $extension = $thumbnailFile->getClientOriginalExtension();
+      $path = '@' . Auth::User()->name . '/' . $title . '/' . 'thumbnail/' . time() . '.' . $extension;
+
+      Storage::disk('s3')->put($path, fopen($thumbnailFile, 'r+'), 'public');
 
       $post = Post::create([
         'title'=>$title,
         'user_id'=>Auth::id(),
         'content'=>$content,
-        'thumbnail'=>$file->getClientOriginalExtension()
+        'thumbnail'=>Storage::disk('s3')->url($path),
       ]);
       
       $tags = array_map(function($tag) {
@@ -99,9 +99,11 @@ class PostsController extends Controller
     public function show($id)
     {
       $post = Post::with('user:id,name,thumbnail')->where(['id'=>$id])->first();
+      $post_tags = Post_tag::with('tag:id,name')->where(['post_id'=>$id])->get();
 
       return view('posts', [
-        'post'=> $post
+        'post'=> $post,
+        'post_tags'=>$post_tags
       ]);
     }
 
@@ -127,13 +129,35 @@ class PostsController extends Controller
     {
       $title = $request->input('title');
       $content = $request->input('content');
+      $tags = $request->input('tags');
+      $tags = explode(',', $tags);
+      $thumbnailFile = $request->file('thumbnail');
+      
+      $extension = $thumbnailFile->getClientOriginalExtension();
+      $path = '@' . Auth::User()->name . '/' . $title . '/' . 'thumbnail/' . time() . '.' . $extension;
+
+      Storage::disk('s3')->put($path, fopen($thumbnailFile, 'r+'), 'public');
 
       Post::where(['id'=>$id])
         ->update([
           'title'=>$title,
           'content'=>$content,
-          'thumbnail'=>''
+          'thumbnail'=>Storage::disk('s3')->url($path)
+      ]);
+      $tags = array_map(function($tag) {
+        return Tag::firstOrCreate([
+          'name'=>$tag
         ]);
+      }, $tags);
+
+      Post_tag::where(['post_id'=>$id])->delete();
+
+      foreach ($tags as $tag) {
+        Post_tag::firstOrCreate([
+          'post_id'=>$id,
+          'tag_id'=>$tag->id
+        ]);
+      }
       return redirect('/');
     }
 
@@ -145,6 +169,7 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+      Post::where(['id'=>$id])->delete();
+      return redirect('/');
     }
 }

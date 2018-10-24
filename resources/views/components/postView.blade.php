@@ -19,12 +19,16 @@
     @if ($post['user']['name'] == Auth::user()->name)
     <div class="postAction">
       <a class="btn" href="{{'/write?edit_id=' . $post['id'] }}">수정</a>
-      <a class="btn" href="">삭제</a>
+      <a class="btn" href="{{'/posts/'.$post['id'].'/delete'}}">삭제</a>
     </div>
     @endif
   </div>
   <div id="editSection"></div>
-  <div class="tagSection">태그 섹션</div>
+  <div class="PostTags">
+    @foreach ($post_tags as $post_tag)
+      <a href="/tags/{{$post_tag['tag']['name']}}">{{$post_tag['tag']['name']}}</a>
+    @endforeach
+  </div>
   <div class="commentSection">코멘트 섹션</div>
 </div>
 <script>

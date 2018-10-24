@@ -11,45 +11,18 @@ var editor = new tui.Editor({
   // }
 });
 
-function submit(post_id) {
-  var title = document.getElementById('title_text').value;//$('#title_text')[0].value;
-  var content = editor.getHtml();
-  var url = '/posts' + (post_id ? '/'+post_id : '');
-  alert(url);
-  if(!title && !content) {
-    alert("모두 입력하여 주십시오");
+function submit() {
+  var submitBox = document.getElementsByClassName('SubmitBox')[0];
+  if (submitBox.style.display === 'none') {
+    submitBox.classList.remove('disappear');
+    submitBox.classList.add('appear');
+    submitBox.style.display = '';
+    
   }else {
-    var data = new FormData();
-    data.append('title', title);
-    data.append('content', content);
-
-    fetch(url, {
-      method: 'POST',
-      headers : {
-        "X-CSRF-TOKEN": "newJEkJEWsK36uFG44ci9PLxFqRSvAs6d6aTCB6N",
-      },
-      redirect: 'follow',
-      body: data,
-    })
-    .then(res => {
-      alert('성공적으로 등록되었습니다.');
-      location.href = '/';
-    }).catch(err => {
-      console.log(err);
-    })
+    submitBox.classList.remove('appear');
+    submitBox.classList.add('disappear');
+    setTimeout(() => {
+      submitBox.style.display = 'none';
+    }, 150);
   }
 }
-var _submitBox = new (function (target){
-  this.title = '';
-  this.content = '';
-  this.tag = {};
-  this.thumbnail  = '';
-  this.appear = false;
-  this.targetBox = target;
-
-  this.showSubmitbox = function () {
-    if(this.appear) {
-      this.target.style['display'] = 'none';
-    }
-  }
-})(document.getElementsByClassName('SubmitBox')[0]);

@@ -21,7 +21,7 @@
    <script src="{{ asset('js/main.js') }}"></script>
    
   <!-- Toast UI Editor -->
-  <script src="{{ asset('bower_components/jquery/dist/jquery.js') }}"></script>
+  {{-- <script src="{{ asset('bower_components/jquery/dist/jquery.js') }}"></script> --}}
   <script src="{{ asset('bower_components/tui-code-snippet/dist/tui-code-snippet.js') }}"></script>
   <script src="{{ asset('bower_components/markdown-it/dist/markdown-it.js') }}"></script>
   <script src="{{ asset('bower_components/to-mark/dist/to-mark.js') }}"></script>

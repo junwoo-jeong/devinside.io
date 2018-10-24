@@ -10,4 +10,7 @@ class Tag extends Model
     'name'
   ];
   public $timestamps = false;
+  public function post_tags() {
+    return $this->hasMany('App\Post_tag');
+  }
 }
