@@ -179,4 +179,16 @@ class PostsController extends Controller
       Post::where(['id'=>$id])->delete();
       return redirect('/');
     }
+
+    public function imgUpload(Request $request)
+    {
+      $img = $request->file('img');
+      
+      $extension = $img->getClientOriginalExtension();
+      $path = '@' . Auth::User()->name . '/content/' . time() . '.' . $extension;
+
+      Storage::disk('s3')->put($path, fopen($img, 'r+'), 'public');
+
+      return Storage::disk('s3')->url($path);
+    }
 }

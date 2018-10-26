@@ -16,7 +16,7 @@
       <div class="date">조회수 : {{ $post['hit'] }}</div>
     </div>
     <div class="separator"></div>
-    @if ($post['user']['name'] == Auth::user()->name)
+    @if ($post['user']['name'] == (Auth::user()->name ?? ''))
     <div class="postAction">
       <a class="btn" href="{{'/write?edit_id=' . $post['id'] }}">수정</a>
       <a class="btn" href="{{'/posts/'.$post['id'].'/delete'}}">삭제</a>

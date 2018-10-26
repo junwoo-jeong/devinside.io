@@ -54,7 +54,10 @@
   @else
     <div class="TagsTemplate">
       <div class="TagCurrent">
-        <a href="/tags" class="backwards-btn">전체태그 보기</a>
+        <a href="/tags" class="backwards-btn">
+          <i class="material-icons" style="font-size: 28px;">arrow_back</i>
+          전체태그 보기
+        </a>
         <hr />
         <h2>
           #{{$tag}}
