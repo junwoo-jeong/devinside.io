@@ -20,4 +20,7 @@ class Post extends Model
   public function post_tags() {
     return $this->hasMany('App\Post_tag');
   }
+  public function comments() {
+    return $this->hasMany('App\Comment');
+  }
 }
