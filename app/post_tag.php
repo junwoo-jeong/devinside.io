@@ -12,7 +12,7 @@ class Post_tag extends Model
     'tag_id'
   ];
   public function tag() {
-    return $this->belongsTo('App\tag');
+    return $this->belongsTo('App\Tag');
   }
   public function post() {
     return $this->belongsTo('App\Post');
