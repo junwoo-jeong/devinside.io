@@ -18,7 +18,7 @@
         </h3>
         <div class="subinfo">
           <span>
-            {{ $post['created_at'] }}
+            {{ $post['updated_at'] }}
           </span>
           <span>
             5개의 댓글
