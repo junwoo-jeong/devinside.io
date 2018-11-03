@@ -25,6 +25,8 @@ class CreateCommentsTable extends Migration
             $table->text('text');
             $table->integer('reply_to')->nullable();
             $table->integer('level')->default(0);
+            $table->boolean('has_replies')->default(false);
+            $table->boolean('deleted')->default(false);
             $table->timestamps();
         });
     }

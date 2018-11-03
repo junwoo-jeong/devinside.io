@@ -26,4 +26,7 @@ Route::post('/posts', 'PostsController@store')->name('posts.store'); // 생성
 Route::post('/posts/{id}', 'PostsController@update')->name('posts.update'); // 글 수정
 Route::get('/posts/{id}/delete', 'PostsController@destroy')->name('posts.destory'); // 글 삭제
 
+Route::post('/comment/write', 'CommentController@write');
+Route::get('/comment/list', 'CommentController@listComments');
+
 Route::post('/imgUpload', 'PostsController@imgUpload');
