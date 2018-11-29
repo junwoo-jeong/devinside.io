@@ -11,14 +11,14 @@
 |
 */
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
+Route::get('/', 'HomeController@index')->middleware('verified')->name('home');
+Route::get('/trending', 'HomeController@index')->middleware('verified')->name('trending');
+Route::get('/recent', 'HomeController@recentIndex')->middleware('verified')->name('recent');
+Route::get('/tags', 'HomeController@tagsIndex')->middleware('verified')->name('tags');
+Route::get('/tags/{tag}', 'HomeController@tagsShow')->middleware('verified');
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/trending', 'HomeController@index')->name('trending');
-Route::get('/recent', 'HomeController@recentIndex')->name('recent');
-Route::get('/tags', 'HomeController@tagsIndex')->name('tags');
-Route::get('/tags/{tag}', 'HomeController@tagsShow');
 //Route::resource('posts', 'PostsController');
 Route::get('/posts/{id}', 'PostsController@show')->name('posts.show'); // 특정 글
 Route::get('/write', 'PostsController@create')->name('posts.create'); // 생성폼

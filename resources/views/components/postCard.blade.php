@@ -21,9 +21,6 @@
             {{ $post['updated_at'] }}
           </span>
           <span>
-            5개의 댓글
-          </span>
-          <span>
           조회수 : {{ $post['hit'] }}
           </span>
         </div>

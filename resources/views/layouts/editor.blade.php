@@ -38,7 +38,7 @@
   @yield('head')
 </head>
 <body>
-    @yield('writeForm')
+  @yield('writeForm')
   <div class="postTamplate">
   @yield('mainHead')
   @yield('viewForm')     
