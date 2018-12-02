@@ -13,7 +13,7 @@
 
 Auth::routes(['verify' => true]);
 
-Route::get('/', 'HomeController@index')->middleware('verified')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/trending', 'HomeController@index')->middleware('verified')->name('trending');
 Route::get('/recent', 'HomeController@recentIndex')->middleware('verified')->name('recent');
 Route::get('/tags', 'HomeController@tagsIndex')->middleware('verified')->name('tags');
@@ -30,3 +30,6 @@ Route::post('/comment/write', 'CommentController@write');
 Route::get('/comment/list', 'CommentController@listComments');
 
 Route::post('/imgUpload', 'PostsController@imgUpload');
+
+Route::get('login/google', 'GoogleController@redirectToProvider');
+Route::get('login/google/callback', 'GoogleController@handleProviderCallback');

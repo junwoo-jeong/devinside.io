@@ -39,5 +39,10 @@ return [
             'tolerance' => env('STRIPE_WEBHOOK_TOLERANCE', 300),
         ],
     ],
+    'google' => [
+      'client_id' => env('GOOGLE_CLIENT_ID'),         // Your GitHub Client ID
+      'client_secret' => env('GOOGLE_CLIENT_SECRET'), // Your GitHub Client Secret
+      'redirect' => '/login/google/callback',
+  ],
 
 ];
