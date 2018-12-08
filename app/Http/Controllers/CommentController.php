@@ -19,6 +19,7 @@ class CommentController extends Controller
         'has_replies' => 'boolean|nullable',
         'deleted' => 'boolean|nullable',
       ]);
+
       Comment::create($validator);
       return $validator;
     }
